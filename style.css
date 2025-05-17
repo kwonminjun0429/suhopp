@@ -1,0 +1,107 @@
+body {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+#deleteSelectedBtn {
+  background-color: #ef4444;
+}
+
+#deleteSelectedBtn:hover {
+  background-color: #b91c1c;
+}
+
+.term {
+  background: white;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  /* 아래 두 줄 수정 */
+  display: flex;
+  flex-direction: column;  /* 추가: 세로 배치 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.term-checkbox {
+  margin-right: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  display: none; /* 기본 숨김 */
+}
+
+.term-checkbox.show {
+  display: inline-block; /* 체크박스 보이기 */
+}
+
+.term-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-grow: 1;
+}
+
+.term-desc {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #444;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0;
+}
+
+.term-desc.open {
+  max-height: 300px; /* 충분히 큰 값 */
+  padding: 8px 0;
+}
